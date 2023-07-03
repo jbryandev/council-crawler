@@ -9,7 +9,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { agencies, agendas } from '@/lib/data';
-import { type Agency } from '@/lib/types';
+import { formatDate } from '@/lib/utils';
+import { type Agency } from '@/types';
 
 type AgendaCardProps = {
   href: string;
@@ -62,9 +63,7 @@ export default function RecentAgendas() {
               <AgendaCard
                 key={agenda.url}
                 href={'#'}
-                date={agenda.date.toLocaleDateString('en-US', {
-                  dateStyle: 'long',
-                })}
+                date={formatDate(agenda.date)}
                 agency={agency?.name}
               />
             );

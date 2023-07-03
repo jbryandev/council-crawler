@@ -1,9 +1,7 @@
 import '@/styles/globals.css';
 import { type Metadata } from 'next';
 
-import { TextWrapProvider, ThemeProvider } from '@/components/providers';
-import { SiteFooter } from '@/components/site-footer';
-import { SiteHeader } from '@/components/site-header';
+import { BalancerProvider, ThemeProvider } from '@/components/providers';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { siteConfig } from '@/config/site';
 import { fontSans } from '@/lib/fonts';
@@ -35,14 +33,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <TextWrapProvider>
-            <div className='relative flex min-h-screen flex-col'>
-              <SiteHeader />
-              <div className='container relative flex-1 pb-10'>{children}</div>
-              <SiteFooter />
-            </div>
+          <BalancerProvider>
+            {children}
             <TailwindIndicator />
-          </TextWrapProvider>
+          </BalancerProvider>
         </ThemeProvider>
       </body>
     </html>

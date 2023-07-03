@@ -1,40 +1,66 @@
 import { faker } from '@faker-js/faker';
 
-import { type Agency, type Agenda, type Highlight } from '@/lib/types';
+import { type Agency, type Agenda, type Highlight, type User } from '@/types';
 
 faker.seed(123);
 faker.setDefaultRefDate(new Date(2023, 5, 23));
 
+export const user: User = {
+  id: 0,
+  email: faker.internet.email(),
+  name: 'James Bryan',
+  image: 'https://avatars.githubusercontent.com/u/17677329?v=4',
+  isPro: true,
+  stripeCustomerId: faker.string.uuid(),
+  stripeSubscriptionId: faker.string.uuid(),
+  stripeCurrentPeriodEnd: faker.date.future().getTime(),
+  stripePriceId: faker.string.uuid(),
+  createdAt: faker.date.past(),
+  updatedAt: faker.date.recent(),
+};
+
 export const agencies: Agency[] = [
   {
     id: 0,
-    name: 'Edmond Public Works Committee',
+    fullName: 'Edmond Public Works Committee',
+    shortName: 'Edmond',
     slug: 'edmond',
+    url: 'https://edmondok.com/AgendaCenter/Public-Works-Committee-10/',
   },
   {
     id: 1,
-    name: 'Oklahoma City Water Utilities Trust',
+    fullName: 'Oklahoma City Water Utilities Trust',
+    shortName: 'OCWUT',
     slug: 'ocwut',
+    url: 'https://okc.legistar.com/DepartmentDetail.aspx?ID=174&GUID=0D4F2F1C-8F1C-4F1C-8F1C-4F1C8F1C8F1C',
   },
   {
     id: 2,
-    name: 'Stillwater Utilities Authority',
+    fullName: 'Stillwater Utilities Authority',
+    shortName: 'Stillwater',
     slug: 'stillwater',
+    url: 'https://stillwaterok.org/agendacenter',
   },
   {
     id: 3,
-    name: 'Norman Utilities Authority',
+    fullName: 'Norman Utilities Authority',
+    shortName: 'Norman',
     slug: 'norman',
+    url: 'https://normanok.legistar.com/DepartmentDetail.aspx?ID=174&GUID=0D4F2F1C-8F1C-4F1C-8F1C-4F1C8F1C8F1C',
   },
   {
     id: 4,
-    name: 'Broken Arrow Municipal Authority',
+    fullName: 'Broken Arrow Municipal Authority',
+    shortName: 'Broken Arrow',
     slug: 'bama',
+    url: 'https://brokenarrowok.gov/AgendaCenter/Municipal-Authority-5/',
   },
   {
     id: 5,
-    name: 'Tulsa Municipal Utilities Authority',
+    fullName: 'Tulsa Municipal Utilities Authority',
+    shortName: 'Tulsa',
     slug: 'tmua',
+    url: 'https://www.cityoftulsa.org/government/departments/utilities/utilities-boards-and-authorities/municipal-utilities-authority/',
   },
 ];
 

@@ -1,33 +1,47 @@
 import {
+  AlertTriangle,
   ArrowRight,
   Calendar,
   CalendarHeart,
+  CreditCard,
   FileText,
   Highlighter,
   Landmark,
   Laptop,
+  Loader2,
   type Icon as LucideIcon,
   type LucideProps,
   Menu,
   Moon,
+  MoreVertical,
+  Plus,
+  Settings,
   Sun,
+  Trash2,
   X,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
 
 export const Icons = {
+  add: Plus,
   arrowRight: ArrowRight,
   building: Landmark,
   calendar: Calendar,
+  card: CreditCard,
   close: X,
+  ellipsis: MoreVertical,
   file: FileText,
   highlighter: Highlighter,
   laptop: Laptop,
   logo: CalendarHeart,
   menu: Menu,
   moon: Moon,
+  settings: Settings,
+  spinner: Loader2,
   sun: Sun,
+  trash: Trash2,
+  warning: AlertTriangle,
   apple: (props: LucideProps) => (
     <svg role='img' viewBox='0 0 24 24' {...props}>
       <path
