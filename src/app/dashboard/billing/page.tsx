@@ -1,5 +1,3 @@
-import { redirect } from 'next/navigation';
-
 import { BillingForm } from '@/components/billing-form';
 import { DashboardHeader } from '@/components/dashboard-header';
 import { DashboardShell } from '@/components/dashboard-shell';
