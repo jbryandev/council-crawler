@@ -21,10 +21,10 @@ export function MainNav({ items }: MainNavProps) {
           {items.map((item, index) => (
             <Link
               key={index}
-              href={item.disabled ? '#' : item.href}
+              href={item.disabled ? '#' : item.href || '#'}
               className={cn(
                 'flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm',
-                item.href.startsWith(`${path}`)
+                item.href?.startsWith(`${path}`)
                   ? 'text-foreground'
                   : 'text-foreground/60',
                 item.disabled && 'cursor-not-allowed opacity-80'
