@@ -15,18 +15,21 @@ export const marketingConfig: MarketingConfig = {
       href: '/contact',
     },
   ],
-  sidebarNavItems: [
+  mobileNavItems: [
     {
       title: 'Features',
       href: '/#features',
+      items: [],
     },
     {
       title: 'Pricing',
       href: '/pricing',
+      items: [],
     },
     {
       title: 'Contact',
       href: '/contact',
+      items: [],
     },
   ],
 };

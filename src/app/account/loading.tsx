@@ -2,10 +2,10 @@ import { CardSkeleton } from '@/components/card-skeleton';
 import { DashboardHeader } from '@/components/dashboard-header';
 import { DashboardShell } from '@/components/dashboard-shell';
 
-export default function DashboardSettingsLoading() {
+export default function AccountLoading() {
   return (
     <DashboardShell>
-      <DashboardHeader heading='Settings' text='Manage website settings.' />
+      <DashboardHeader heading='Account' text='Manage account settings.' />
       <div className='grid gap-10'>
         <CardSkeleton />
       </div>

@@ -8,7 +8,8 @@ faker.setDefaultRefDate(new Date(2023, 5, 23));
 export const user: User = {
   id: 0,
   email: faker.internet.email(),
-  name: 'James Bryan',
+  firstName: 'James',
+  lastName: 'Bryan',
   image: 'https://avatars.githubusercontent.com/u/17677329?v=4',
   isPro: true,
   stripeCustomerId: faker.string.uuid(),

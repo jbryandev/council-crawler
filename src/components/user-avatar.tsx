@@ -1,23 +1,22 @@
 // import { User } from '@prisma/client';
 import { type AvatarProps } from '@radix-ui/react-avatar';
-import nameInitials from 'name-initials';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { type User } from '@/types';
 
 interface UserAvatarProps extends AvatarProps {
-  user: Pick<User, 'image' | 'name'>;
+  user: Pick<User, 'image' | 'firstName' | 'lastName'>;
 }
 
 export function UserAvatar({ user, ...props }: UserAvatarProps) {
-  const initials = nameInitials(user.name);
+  const initials = `${user?.firstName?.charAt(0) ?? ''}${
+    user?.lastName?.charAt(0) ?? ''
+  }`;
+
   return (
     <Avatar {...props}>
-      {user.image ? (
-        <AvatarImage alt='Picture' src={user.image} />
-      ) : (
-        <AvatarFallback>{initials}</AvatarFallback>
-      )}
+      <AvatarImage alt='Picture' src={user.image || ''} />
+      <AvatarFallback className='text-sm'>{initials}</AvatarFallback>
     </Avatar>
   );
 }

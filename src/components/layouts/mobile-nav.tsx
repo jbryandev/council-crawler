@@ -11,10 +11,10 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
-import { type SidebarNavItem } from '@/types';
+import { type MobileNavItem } from '@/types';
 
 interface MobileNavProps extends React.HTMLAttributes<HTMLElement> {
-  items: SidebarNavItem[];
+  items: MobileNavItem[];
 }
 
 export function MobileNav({ items }: MobileNavProps) {
@@ -42,7 +42,7 @@ export function MobileNav({ items }: MobileNavProps) {
         </MobileLink>
         <ScrollArea className='my-4 h-[calc(100vh-8rem)] pb-10 pl-6'>
           <div className='space-y 3 flex flex-col'>
-            {items?.map(
+            {items.map(
               (item) =>
                 item.href && (
                   <MobileLink

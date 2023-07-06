@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Manage account and website settings.',
 };
 
-export default function SettingsPage() {
+export default function AccountPage() {
   // const user = await getCurrentUser();
 
   // if (!user) {
@@ -16,7 +16,7 @@ export default function SettingsPage() {
 
   return (
     <DashboardShell>
-      <DashboardHeader heading='Settings' text='Manage website settings.' />
+      <DashboardHeader heading='Account' text='Manage account settings.' />
       <div className='grid gap-10'>
         {/* <UserNameForm user={{ id: user.id, name: user.name || '' }} /> */}
       </div>

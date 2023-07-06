@@ -4,7 +4,7 @@ import { type Icons } from '@/components/icons';
 
 export interface NavItem {
   title: string;
-  href?: string;
+  href: string;
   disabled?: boolean;
   external?: boolean;
   icon?: keyof typeof Icons;
@@ -17,22 +17,26 @@ export interface NavItemWithChildren extends NavItem {
 
 export type MainNavItem = NavItem;
 
+export type MobileNavItem = NavItemWithChildren;
+
 export type SidebarNavItem = NavItem;
 
 export type MarketingConfig = {
   mainNav: MainNavItem[];
-  sidebarNavItems: SidebarNavItem[];
+  mobileNavItems: MobileNavItem[];
 };
 
 export type DashboardConfig = {
+  mobileNavItems: MobileNavItem[];
   sidebarNavItems: SidebarNavItem[];
 };
 
 export type User = {
   // testing only
   id: number;
+  firstName: string;
+  lastName: string;
   email: string;
-  name: string;
   image: string?;
   isPro: boolean;
   stripeCustomerId: string;

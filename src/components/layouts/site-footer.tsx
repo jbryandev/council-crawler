@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Icons } from '@/components/icons';
 import { Separator } from '@/components/ui/separator';
 
-export function SiteFooter() {
+export default function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
